@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pressboard</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="board.mjs"></script>
+</head>
+<body>
+<main>
+  <header><h1>Pressboard</h1><a href="../">Back to Fretlab</a></header>
+  <div class="toolbar">
+    <label>Sound name <input id="name" maxlength="80" placeholder="Mic take"></label>
+    <button id="record" type="button">Record mic</button>
+    <button id="finish" type="button" disabled>Finish recording</button>
+    <label>Import sound <input id="import" type="file" accept=".json,application/json"></label>
+  </div>
+  <div class="toolbar">
+    <label>Bank size <select id="size"><option>4</option><option selected>8</option><option>16</option></select></label>
+    <button id="previous" type="button" aria-label="Previous bank">←</button>
+    <span id="bank"></span>
+    <button id="next" type="button" aria-label="Next bank">→</button>
+    <button id="stop" type="button">Stop all</button>
+  </div>
+  <div id="pads" aria-label="Sound pads"></div>
+  <div class="toolbar">
+    <label>Manage sound <select id="sound"></select></label>
+    <button id="earlier" type="button">Move earlier</button>
+    <button id="later" type="button">Move later</button>
+    <button id="export" type="button">Export sound</button>
+    <button id="remove" type="button">Remove</button>
+  </div>
+  <p id="status" role="status">Opening sound library…</p>
+</main>
+</body>
+</html>
